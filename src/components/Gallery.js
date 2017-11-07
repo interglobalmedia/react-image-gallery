@@ -27,9 +27,13 @@ class Gallery extends Component {
 		this.renderImageContent = this.renderImageContent.bind(this);
 	}
 	renderImageContent(src, index) {
+		const imgStyle = {
+			border: '5px solid #8b3a62',
+			width: '100%'
+		}
 		return (
 			<div key={src} onClick={(e) => this.openModal(e, index)}>
-				<img src={src}/>
+				<img style={imgStyle} src={src}/>
 			</div>
 		)
 	}
