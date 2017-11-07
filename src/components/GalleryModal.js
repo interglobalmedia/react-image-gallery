@@ -45,6 +45,42 @@ class GalleryModal extends Component {
 		const modalBodyStyle = {
 			position: 'relative'
 		}
+		const anchorStyle = {
+			position: 'absolute',
+		    display: 'inline',
+		    color: 'orange',
+		    textDecoration: 'none',
+		    lineHeight: '36px',
+		    fontSize: '30px',
+		    fontWeight: 'lighter',
+		    background: '#8b3a62',
+		    borderRadius: '5px',
+		    height: '40px',
+		    width: '40px',
+		    textAlign: 'center'
+		}
+		const modalCloseStyle = {
+			right: '0',
+		    top: '0',
+		    borderRadius: '0 0 0 5pxs'
+		}
+		const constModalNextPrevStyle = {
+			right: '0',
+		    top: 'calc(50% - 25px)',
+		    borderRadius: '5px 0 0 5px',
+		    height: '50px',
+		    lineHeight: '40px',
+		    fontSize: '60px'
+		}
+		const modalPrevStyle = {
+			left: '0',
+		    right: 'auto',
+		    borderRadius: '0 5px 5px 0'
+		}
+		const imgStyle = {
+			width: '100%',
+		    border: '5px solid #8b3a62'
+		}
 		const mediaMin320StyleModal = {
 			'@media (min-width: 320px)': {
 				width: '95%'
@@ -69,10 +105,10 @@ class GalleryModal extends Component {
 				<div className='modal-overlay' style={modalOverlayStyle} onClick={closeModal}></div>
 				<div className='modal' style={[modalStyle, mediaMin320StyleModal, mediaMin544StyleModal, mediaMin960StyleModal]} isOpen={!!src}>
 					<div className='modal-body' style={modalBodyStyle}>
-						<a href='#' className='modal-close' onClick={closeModal} onKeyDown={this.handleKeyDown}>&times;</a>
-						{hasPrev && <a href='#' className='modal-prev' onClick={findPrev} onKeyDown={this.handleKeyDown}>&lsaquo;</a>}
-						{hasNext && <a href='#' className='modal-next' onClick={findNext} onKeyDown={this.handleKeyDown}>&rsaquo;</a>}
-						<img src={src}/>
+						<a href='#' className='modal-close' style={[modalCloseStyle, anchorStyle]} onClick={closeModal} onKeyDown={this.handleKeyDown}>&times;</a>
+						{hasPrev && <a href='#' className='modal-prev' style={[anchorStyle, constModalNextPrevStyle, modalPrevStyle]} onClick={findPrev} onKeyDown={this.handleKeyDown}>&lsaquo;</a>}
+						{hasNext && <a href='#' className='modal-next' style={[anchorStyle, constModalNextPrevStyle]} onClick={findNext} onKeyDown={this.handleKeyDown}>&rsaquo;</a>}
+						<img style={imgStyle} src={src}/>
 					</div>
 				</div>
 			</div>
