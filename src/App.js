@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
 import Gallery from './components/Gallery';
+import Radium, {StyleRoot} from 'radium';
 
 
 class App extends Component {
 	render() {
 
 		return (
-			<div>
-				<Gallery />
-			</div>
+			<StyleRoot>
+				<div>
+					<Gallery />
+				</div>
+			</StyleRoot>
 		)
 	}
 }
 
-export default App;
+export default Radium(App);

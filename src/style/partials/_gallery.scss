@@ -1,63 +1,7 @@
-*,
-*:after,
-*:before {
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 16px;
-}
-
-body {
-    font-family: helvetica;
-    position: relative;
-    font-size: 100%;
-    background: #D1913C;
-    background: -webkit-linear-gradient(to right, #FFD194, #D1913C);
-    background: linear-gradient(to right, #FFD194, #D1913C);
-}
-
-.gallery-container {
-    padding: 0.9375rem 0;
-}
-
-.gallery-container h1 {
-    margin: 2rem 0;
-    padding: 0;
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 6.5vw;
-    font-weight: lighter;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 8px;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
-@media (min-width: 320px) {
-    .gallery-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-@media (min-width: 544px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media (min-width: 960px) {
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
+// Gallery
 .gallery-grid img {
     width: 100%;
-    border: 5px solid #fff;
+    border: 5px solid #8b3a62;
 }
 
 .gallery-grid div {
@@ -76,7 +20,7 @@ body {
     font-size: 80px;
     position: absolute;
     transform: translate3d(-50%, -50%, 0) rotate(-45deg);
-    color: #fff;
+    color: #cd6090;
     left: 50%;
     top: 50%;
     display: block;
@@ -99,59 +43,22 @@ body {
     transition: 0.3s opacity ease;
 }
 
-.modal {
-    position: fixed;
-    z-index: 999;
-    width: 50%;
-    max-width: 800px;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-}
-@media (min-width: 320px) {
-    .modal {
-        width: 95%;
-    }
-}
-@media (min-width: 544px) {
-    .modal {
-        width: 80%;
-    }
-}
-@media (min-width: 960px) {
-    .modal {
-        width: 60%;
-    }
-}
+// modal
 
 .modal img {
     width: 100%;
-    border: 5px solid #fff;
-}
-
-.modal-overlay {
-    position: fixed;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-}
-
-.modal-body {
-    position: relative;
+    border: 5px solid #8b3a62;
 }
 
 .modal-body a {
     position: absolute;
     display: inline;
-    color: #222;
+    color: orange;
     text-decoration: none;
     line-height: 36px;
     font-size: 30px;
     font-weight: lighter;
-    background: #fff;
+    background: #8b3a62;
     border-radius: 5px;
     height: 40px;
     width: 40px;

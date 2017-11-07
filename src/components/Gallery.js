@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
 import GalleryModal from './GalleryModal';
+import Radium from 'radium';
 
 const imgUrls = [
-	'https://source.unsplash.com/PC_lbSSxCZE/800x600',
-	'https://source.unsplash.com/lVmR1YaBGG4/800x600',
-	'https://source.unsplash.com/5KvPQc1Uklk/800x600',
-	'https://source.unsplash.com/GtYFwFrFbMA/800x600',
-	'https://source.unsplash.com/Igct8iZucFI/800x600',
-	'https://source.unsplash.com/M01DfkOqz7I/800x600',
-	'https://source.unsplash.com/MoI_cHNcSK8/800x600',
-	'https://source.unsplash.com/M0WbGFRTXqU/800x600',
-	'https://source.unsplash.com/s48nn4NtlZ4/800x600',
-	'https://source.unsplash.com/E4944K_4SvI/800x600',
-	'https://source.unsplash.com/F5Dxy9i8bxc/800x600',
-	'https://source.unsplash.com/iPum7Ket2jo/800x600'
+	'https://source.unsplash.com/jdFscnVoDxw/800x600',
+	'https://source.unsplash.com/sfgH9dXcMRw/800x600',
+	'https://source.unsplash.com/RTZ4af86CkU/800x600',
+	'https://source.unsplash.com/whDrFMucHkc/800x600',
+	'https://source.unsplash.com/OP3ghv27Yto/800x600',
+	'https://source.unsplash.com/eTa53Uf0StE/800x600',
+	'https://source.unsplash.com/qCxN0_piuHc/800x600',
+	'https://source.unsplash.com/CWgkBbVxYqo/800x600',
+	'https://source.unsplash.com/lXgH5qfaliQ/800x600',
+	'https://source.unsplash.com/hDXs7TnArEE/800x600',
+	'https://source.unsplash.com/FueRaNunlUc/800x600',
+	'https://source.unsplash.com/aDTMGRdx28w/800x600'
 ];
 
 class Gallery extends Component {
@@ -62,9 +63,50 @@ class Gallery extends Component {
 		}));
 	}
 	render() {
+		const galleryContainerStyle = {
+			padding: '0.9375rem 0'
+		}
+		const galleryContainerH1Style = {
+		    margin: '2rem 0',
+		    padding: '0',
+		    textAlign: 'center',
+		    color: '#8b3a62',
+		    textTransform: 'uppercase',
+		    fontSize: '7vw',
+		    fontWeight: 'lighter',
+			fontFamily: 'Inconsolata, monospace'
+		}
+		const galleryGridStyle = {
+			display: 'grid',
+		    gridTemplateColumns: 'repeat(3, 1fr)',
+		    gridGap: '8px',
+		    maxWidth: '1200px',
+		    width: '100%',
+		    margin: '0 auto',
+			'img': {
+				width: '100%',
+				border: '5px solid #8b3a62'
+			}
+		}
+		const mediaMin320StyleGTC = {
+			'@media (min-width: 320px)': {
+				gridTemplateColumns: 'repeat(1, 1fr)'
+			}
+		}
+		const mediaMin544StyleGTC = {
+			'@media (min-width: 544px)': {
+				gridTemplateColumns: 'repeat(2, 1fr)'
+			}
+		}
+		const mediaMin960StyleGTC = {
+			'@media (min-width: 960px)': {
+				gridTemplateColumns: 'repeat(3, 1fr)'
+			}
+		}
 		return (
-			<div className='gallery-container'>
-				<div className='gallery-grid'>
+			<div className='gallery-container' style={galleryContainerStyle}>
+				<h1 style={galleryContainerH1Style}>This gallery is hot!</h1>
+				<div className='gallery-grid' style={[galleryGridStyle, mediaMin320StyleGTC, mediaMin544StyleGTC, mediaMin960StyleGTC]}>
 					{imgUrls.map(this.renderImageContent)}
 				</div>
 				<GalleryModal
@@ -80,4 +122,4 @@ class Gallery extends Component {
 	}
 }
 
-export default Gallery;
+export default Radium(Gallery);
