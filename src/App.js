@@ -8,8 +8,9 @@ class App extends Component {
 
 		return (
 			<StyleRoot>
-				<div>
+				<div className='App'>
 					<Gallery />
+					<footer>© 2017 Maria D. Campbell</footer>
 				</div>
 			</StyleRoot>
 		)
