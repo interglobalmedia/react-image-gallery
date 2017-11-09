@@ -25,61 +25,61 @@ class GalleryModal extends Component {
 	}
 	render() {
 		const modalOverlayStyle = {
-		    position: 'fixed',
-		    zIndex: '1',
-		    height: '100%',
-		    width: '100%',
-		    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-		    top: '0',
-		    left: '0'
+			position: 'fixed',
+			zIndex: '1',
+			height: '100%',
+			width: '100%',
+			backgroundColor: 'rgba(0, 0, 0, 0.4)',
+			top: '0',
+			left: '0'
 		}
 		const modalStyle = {
 			position: 'fixed',
-		    zIndex: '999',
-		    width: '50%',
-		    maxWidth: '800px',
-		    top: '50%',
-		    left: '50%',
-		    transform: 'translate3d(-50%, -50%, 0)'
+			zIndex: '999',
+			width: '50%',
+			maxWidth: '800px',
+			top: '50%',
+			left: '50%',
+			transform: 'translate3d(-50%, -50%, 0)'
 		}
 		const modalBodyStyle = {
 			position: 'relative'
 		}
 		const anchorStyle = {
 			position: 'absolute',
-		    display: 'inline',
-		    color: 'orange',
-		    textDecoration: 'none',
-		    lineHeight: '36px',
-		    fontSize: '30px',
-		    fontWeight: 'lighter',
-		    background: '#8b3a62',
-		    borderRadius: '5px',
-		    height: '40px',
-		    width: '40px',
-		    textAlign: 'center'
+			display: 'inline',
+			color: 'orange',
+			textDecoration: 'none',
+			lineHeight: '36px',
+			fontSize: '30px',
+			fontWeight: 'lighter',
+			background: '#8b3a62',
+			borderRadius: '5px',
+			height: '40px',
+			width: '40px',
+			textAlign: 'center'
 		}
 		const modalCloseStyle = {
 			right: '0',
-		    top: '0',
-		    borderRadius: '0 0 0 5pxs'
+			top: '0',
+			borderRadius: '0 0 0 5pxs'
 		}
 		const constModalNextPrevStyle = {
 			right: '0',
-		    top: 'calc(50% - 25px)',
-		    borderRadius: '5px 0 0 5px',
-		    height: '50px',
-		    lineHeight: '40px',
-		    fontSize: '60px'
+			top: 'calc(50% - 25px)',
+			borderRadius: '5px 0 0 5px',
+			height: '50px',
+			lineHeight: '40px',
+			fontSize: '60px'
 		}
 		const modalPrevStyle = {
 			left: '0',
-		    right: 'auto',
-		    borderRadius: '0 5px 5px 0'
+			right: 'auto',
+			borderRadius: '0 5px 5px 0'
 		}
 		const imgStyle = {
 			width: '100%',
-		    border: '5px solid #8b3a62'
+			border: '5px solid #8b3a62'
 		}
 		const mediaMin320StyleModal = {
 			'@media (min-width: 320px)': {
@@ -96,7 +96,7 @@ class GalleryModal extends Component {
 				width: '60%'
 			}
 		}
-		const {closeModal, hasNext, hasPrev, findNext, findPrev, src} = this.props;
+		const {closeModal, hasPrev, hasNext, findNext, findPrev, src} = this.props;
 		if(!src) {
 			return null;
 		}
@@ -108,7 +108,7 @@ class GalleryModal extends Component {
 						<a href='#' className='modal-close' style={[modalCloseStyle, anchorStyle]} onClick={closeModal} onKeyDown={this.handleKeyDown}>&times;</a>
 						{hasPrev && <a href='#' className='modal-prev' style={[anchorStyle, constModalNextPrevStyle, modalPrevStyle]} onClick={findPrev} onKeyDown={this.handleKeyDown}>&lsaquo;</a>}
 						{hasNext && <a href='#' className='modal-next' style={[anchorStyle, constModalNextPrevStyle]} onClick={findNext} onKeyDown={this.handleKeyDown}>&rsaquo;</a>}
-						<img style={imgStyle} src={src}/>
+						<img className='modale-content' style={imgStyle} src={src}/>
 					</div>
 				</div>
 			</div>

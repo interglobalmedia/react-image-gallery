@@ -18,9 +18,11 @@ const imgUrls = [
 ];
 
 class Gallery extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {currentIndex: null};
+	constructor() {
+		super();
+		this.state = {
+			currentIndex: null
+		};
 		this.closeModal = this.closeModal.bind(this);
 		this.findNext = this.findNext.bind(this);
 		this.findPrev = this.findPrev.bind(this);
@@ -28,8 +30,8 @@ class Gallery extends Component {
 	}
 	renderImageContent(src, index) {
 		const imgStyle = {
-			border: '5px solid #8b3a62',
-			width: '100%'
+			width: '100%',
+			display: 'block'
 		}
 		return (
 			<div key={src} onClick={(e) => this.openModal(e, index)}>
@@ -51,46 +53,35 @@ class Gallery extends Component {
 		});
 	}
 	findPrev(e) {
+		let currentIndex = this.state.currentIndex;
 		if(e != undefined) {
 			e.preventDefault();
 		}
-		this.setState(prevIndex => ({
-			currentIndex: prevIndex.currentIndex - 1
-		}));
+		if(currentIndex >= 1) {
+			this.setState(prevIndex => ({
+				currentIndex: prevIndex.currentIndex - 1
+			}))
+		}
 	}
 	findNext(e) {
+		let currentIndex = this.state.currentIndex;
 		if(e != undefined) {
 			e.preventDefault();
 		}
-		this.setState(prevIndex => ({
-			currentIndex: prevIndex.currentIndex + 1
-		}));
+		if(currentIndex + 1 < imgUrls.length) {
+			this.setState(prevIndex => ({
+				currentIndex: prevIndex.currentIndex + 1
+			}));
+		}
 	}
 	render() {
 		const galleryContainerStyle = {
 			padding: '0.9375rem 0'
 		}
-		const galleryContainerH1Style = {
-		    margin: '2rem 0',
-		    padding: '0',
-		    textAlign: 'center',
-		    color: '#8b3a62',
-		    textTransform: 'uppercase',
-		    fontSize: '7vw',
-		    fontWeight: 'lighter',
-			fontFamily: 'Inconsolata, monospace'
-		}
 		const galleryGridStyle = {
 			display: 'grid',
-		    gridTemplateColumns: 'repeat(3, 1fr)',
-		    gridGap: '8px',
-		    maxWidth: '1200px',
-		    width: '100%',
-		    margin: '0 auto',
-			'img': {
-				width: '100%',
-				border: '5px solid #8b3a62'
-			}
+			gridTemplateColumns: 'repeat(3, 1fr)',
+			width: '100%'
 		}
 		const mediaMin320StyleGTC = {
 			'@media (min-width: 320px)': {
@@ -109,7 +100,7 @@ class Gallery extends Component {
 		}
 		return (
 			<div className='gallery-container' style={galleryContainerStyle}>
-				<h1 style={galleryContainerH1Style}>This gallery is hot!</h1>
+				<header><div data-text='What a Sizzler!' className='title'></div></header>
 				<div className='gallery-grid' style={[galleryGridStyle, mediaMin320StyleGTC, mediaMin544StyleGTC, mediaMin960StyleGTC]}>
 					{imgUrls.map(this.renderImageContent)}
 				</div>
