@@ -18,16 +18,9 @@ const imgUrls = [
 ];
 
 class Gallery extends Component {
-	constructor() {
-		super();
-		this.state = {
-			currentIndex: null
-		};
-		this.closeModal = this.closeModal.bind(this);
-		this.findNext = this.findNext.bind(this);
-		this.findPrev = this.findPrev.bind(this);
-		this.renderImageContent = this.renderImageContent.bind(this);
-	}
+	state = {
+		currentIndex: null
+	};
 	renderImageContent(src, index) {
 		const imgStyle = {
 			width: '100%',
@@ -39,12 +32,12 @@ class Gallery extends Component {
 			</div>
 		)
 	}
-	openModal(e, index) {
+	openModal = (e, index) => {
 		this.setState({
 			currentIndex: index
 		});
 	}
-	closeModal(e) {
+	closeModal = (e) => {
 		if(e != undefined) {
 			e.preventDefault();
 		}
@@ -52,7 +45,7 @@ class Gallery extends Component {
 			currentIndex: null
 		});
 	}
-	findPrev(e) {
+	findPrev = (e) => {
 		let currentIndex = this.state.currentIndex;
 		if(e != undefined) {
 			e.preventDefault();
@@ -63,7 +56,7 @@ class Gallery extends Component {
 			}))
 		}
 	}
-	findNext(e) {
+	findNext = (e) => {
 		let currentIndex = this.state.currentIndex;
 		if(e != undefined) {
 			e.preventDefault();
@@ -102,12 +95,12 @@ class Gallery extends Component {
 			<div className='gallery-container' style={galleryContainerStyle}>
 				<header><div data-text='What a Sizzler!' className='title'></div></header>
 				<div className='gallery-grid' style={[galleryGridStyle, mediaMin320StyleGTC, mediaMin544StyleGTC, mediaMin960StyleGTC]}>
-					{imgUrls.map(this.renderImageContent)}
+					{imgUrls.map(this.renderImageContent.bind(this))}
 				</div>
 				<GalleryModal
-					closeModal={this.closeModal}
-					findPrev={this.findPrev}
-					findNext={this.findNext}
+					closeModal={this.closeModal.bind(this)}
+					findPrev={this.findPrev.bind(this)}
+					findNext={this.findNext.bind(this)}
 					hasPrev={this.state.currentIndex > 0}
 					hasNext={this.state.currentIndex + 1 < imgUrls.length}
 					src={imgUrls[this.state.currentIndex]}
