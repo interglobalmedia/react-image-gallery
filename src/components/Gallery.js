@@ -51,8 +51,8 @@ class Gallery extends Component {
 			e.preventDefault();
 		}
 		if(currentIndex >= 1) {
-			this.setState(prevIndex => ({
-				currentIndex: prevIndex.currentIndex - 1
+			this.setState(prevState => ({
+				currentIndex: prevState.currentIndex - 1
 			}))
 		}
 	}
@@ -62,8 +62,8 @@ class Gallery extends Component {
 			e.preventDefault();
 		}
 		if(currentIndex + 1 < imgUrls.length) {
-			this.setState(prevIndex => ({
-				currentIndex: prevIndex.currentIndex + 1
+			this.setState(prevState => ({
+				currentIndex: prevState.currentIndex + 1
 			}));
 		}
 	}
