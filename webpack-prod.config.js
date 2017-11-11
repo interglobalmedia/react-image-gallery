@@ -96,19 +96,9 @@ module.exports = {
 		}),
 		new ImageminPlugin({
 			disable: false,
-			optipng: {
-				optimizationLevel: 3
-			},
-			gifsicle: {
-				optimizationLevel: 1
-			},
 			jpegtran: {
 				progressive: false
 			},
-			svgo: {
-			},
-			pngquant: null,
-			plugins: []
 		}),
 		new UglifyJSPlugin({
 			sourceMap: true
