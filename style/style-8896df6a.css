@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+html {
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  position: relative;
+  font-size: 100%;
+  background: #D1913C;
+  background: -webkit-gradient(linear, left top, right top, from(orange), to(#bdb76b));
+  background: linear-gradient(to right, orange, #bdb76b); }
+
+header {
+  z-index: 2;
+  margin: 0 auto 5%;
+  padding-bottom: 20px;
+  text-align: center;
+  position: relative; }
+
+footer {
+  height: 65px;
+  color: #c71585;
+  font-size: 24px;
+  font-family: 'Inconsolata', monospace;
+  padding-top: 10px;
+  text-align: center; }
+
+.gallery-grid div {
+  position: relative;
+  cursor: pointer; }
+
+.gallery-grid div:after,
+.gallery-grid div:before {
+  -webkit-transition: 0.3s opacity ease;
+  transition: 0.3s opacity ease;
+  opacity: 0; }
+
+.gallery-grid div:after {
+  content: '\2194';
+  font-size: 80px;
+  position: absolute;
+  -webkit-transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+          transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  color: #cd6090;
+  left: 50%;
+  top: 50%;
+  display: block; }
+
+.gallery-grid div:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 4px;
+  left: 0; }
+
+.modal-body {
+  -webkit-animation-name: zoom;
+          animation-name: zoom;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-transition: 1s height ease;
+  transition: 1s height ease; }
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+div.title {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 6.5vw;
+  font-family: 'Inconsolata', monospace;
+  letter-spacing: 0.1em; }
+
+div.title:before {
+  width: 100%;
+  font-size: 6.5vw;
+  padding: 0;
+  content: attr(data-text);
+  position: absolute;
+  overflow: hidden;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  white-space: nowrap;
+  width: 0;
+  color: #c71585;
+  -webkit-animation: fill-orange 2.5s infinite;
+          animation: fill-orange 2.5s infinite;
+  font-family: 'Inconsolata', monospace;
+  font-weight: lighter; }
+
+@-webkit-keyframes fill-orange {
+  0% {
+    width: 0; }
+  100% {
+    width: 100%; } }
+
+@keyframes fill-orange {
+  0% {
+    width: 0; }
+  100% {
+    width: 100%; } }
+
+/*# sourceMappingURL=style-8896df6a.css.map*/
