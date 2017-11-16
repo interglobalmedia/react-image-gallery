@@ -58,7 +58,7 @@ class GalleryModal extends Component {
 		const modalCloseStyle = {
 			right: '0',
 			top: '0',
-			borderRadius: '0 0 0 5pxs'
+			borderRadius: '0 0 0 5px'
 		}
 		const constModalNextPrevStyle = {
 			right: '0',
