@@ -21,17 +21,6 @@ class Gallery extends Component {
 	state = {
 		currentIndex: null
 	};
-	renderImageContent(src, index) {
-		const imgStyle = {
-			width: '100%',
-			display: 'block'
-		}
-		return (
-			<div key={src} onClick={(e) => this.openModal(e, index)}>
-				<img style={imgStyle} src={src}/>
-			</div>
-		)
-	}
 	openModal = (e, index) => {
 		this.setState({
 			currentIndex: index
@@ -91,11 +80,19 @@ class Gallery extends Component {
 				gridTemplateColumns: 'repeat(3, 1fr)'
 			}
 		}
+		const imgStyle = {
+			width: '100%',
+			display: 'block'
+		}
 		return (
 			<div className='gallery-container' style={galleryContainerStyle}>
 				<header><div data-text='What a Sizzler!' className='title'></div></header>
 				<div className='gallery-grid' style={[galleryGridStyle, mediaMin320StyleGTC, mediaMin544StyleGTC, mediaMin960StyleGTC]}>
-					{imgUrls.map(this.renderImageContent.bind(this))}
+					{imgUrls.map((imgUrl, index) =>
+						<div key={imgUrl} onClick={(e) => this.openModal(e, index)}>
+							<img style={imgStyle} src={imgUrl}/>
+						</div>
+					)}
 				</div>
 				<GalleryModal
 					closeModal={() => this.closeModal()}
