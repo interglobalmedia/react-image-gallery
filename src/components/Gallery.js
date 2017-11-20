@@ -98,9 +98,9 @@ class Gallery extends Component {
 					{imgUrls.map(this.renderImageContent.bind(this))}
 				</div>
 				<GalleryModal
-					closeModal={this.closeModal.bind(this)}
-					findPrev={this.findPrev.bind(this)}
-					findNext={this.findNext.bind(this)}
+					closeModal={() => this.closeModal()}
+					findPrev={() => this.findPrev()}
+					findNext={() => this.findNext()}
 					hasPrev={this.state.currentIndex > 0}
 					hasNext={this.state.currentIndex + 1 < imgUrls.length}
 					src={imgUrls[this.state.currentIndex]}
