@@ -101,9 +101,9 @@ class GalleryModal extends Component {
 				<div className='modal-overlay' style={modalOverlayStyle} onClick={closeModal}></div>
 				<div className='modal' style={[modalStyle, mediaMin320StyleModal, mediaMin544StyleModal, mediaMin960StyleModal]} isOpen={!!src}>
 					<div className='modal-body' style={modalBodyStyle}>
-						<a href='#' className='modal-close' style={[modalCloseStyle, anchorStyle]} onClick={closeModal} onKeyDown={this.handleKeyDown.bind(this)}>&times;</a>
-						{hasPrev && <a href='#' className='modal-prev' style={[anchorStyle, constModalNextPrevStyle, modalPrevStyle]} onClick={findPrev} onKeyDown={this.handleKeyDown.bind(this)}>&lsaquo;</a>}
-						{hasNext && <a href='#' className='modal-next' style={[anchorStyle, constModalNextPrevStyle]} onClick={findNext} onKeyDown={this.handleKeyDown.bind(this)}>&rsaquo;</a>}
+						<a href='#' className='modal-close' style={[modalCloseStyle, anchorStyle]} onClick={closeModal} onKeyDown={() => this.handleKeyDown()}>&times;</a>
+						{hasPrev && <a href='#' className='modal-prev' style={[anchorStyle, constModalNextPrevStyle, modalPrevStyle]} onClick={findPrev} onKeyDown={() => this.handleKeyDown()}>&lsaquo;</a>}
+						{hasNext && <a href='#' className='modal-next' style={[anchorStyle, constModalNextPrevStyle]} onClick={findNext} onKeyDown={() => this.handleKeyDown()}>&rsaquo;</a>}
 						<img style={imgStyle} src={src}/>
 					</div>
 				</div>
