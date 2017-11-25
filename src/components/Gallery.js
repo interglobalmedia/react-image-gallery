@@ -47,7 +47,7 @@ class Gallery extends Component {
 	}
 	findNext = (e) => {
 		let currentIndex = this.state.currentIndex;
-		if(e != undefined) {
+		if(e !== undefined) {
 			e.preventDefault();
 		}
 		if(currentIndex + 1 < imgUrls.length) {
