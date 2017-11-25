@@ -27,7 +27,7 @@ class Gallery extends Component {
 		});
 	}
 	closeModal = (e) => {
-		if(e != undefined) {
+		if(e !== undefined) {
 			e.preventDefault();
 		}
 		this.setState({
@@ -36,7 +36,7 @@ class Gallery extends Component {
 	}
 	findPrev = (e) => {
 		let currentIndex = this.state.currentIndex;
-		if(e != undefined) {
+		if(e !== undefined) {
 			e.preventDefault();
 		}
 		if(currentIndex >= 1) {
