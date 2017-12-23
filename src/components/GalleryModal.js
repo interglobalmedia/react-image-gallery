@@ -98,8 +98,8 @@ class GalleryModal extends Component {
 		}
 		return (
 			<div>
-				<div className='modal-overlay' style={modalOverlayStyle} onClick={closeModal}></div>
-				<div className='modal' style={[modalStyle, mediaMin320StyleModal, mediaMin544StyleModal, mediaMin960StyleModal]} isOpen={!!src}>
+				<div className='modal-overlay' style={modalOverlayStyle} onClick={closeModal}></div>s
+				<div className='modal' style={[modalStyle, mediaMin320StyleModal, mediaMin544StyleModal, mediaMin960StyleModal]} isopen={!!src}>
 					<div className='modal-body' style={modalBodyStyle}>
 						<a href='#' className='modal-close' style={[modalCloseStyle, anchorStyle]} onClick={closeModal} onKeyDown={() => this.handleKeyDown()}>&times;</a>
 						{hasPrev && <a href='#' className='modal-prev' style={[anchorStyle, modalNextPrevStyle, modalPrevStyle]} onClick={findPrev} onKeyDown={() => this.handleKeyDown()}>&lsaquo;</a>}
