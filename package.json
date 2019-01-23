@@ -81,7 +81,7 @@
     "clean": "rimraf dist",
     "cleanSrc": "rimraf dist/src",
     "copy": "src/favicon.ico dist/",
-    "start": "webpack-dev-server --mode development --config config/webpack.base.config.js --open --hot --history-api-fallback env.PLATFORM=local --env.VERSION=stag",
+    "start": "webpack-dev-server --mode development --config config/webpack.base.config.js --open --hot --history-api-fallback --env.PLATFORM=local --env.VERSION=stag",
     "predeploy": "webpack --mode production --config config/webpack.prod.config.js --env.PLATFORM=production --env.VERSION=stag --progress",
     "deploy": "gh-pages -d dist"
 

@@ -3,15 +3,15 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clen-webpack-plugin');
-const WorkboxPlugin = require('wborkbox-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = env => {
     const { PLATFORM, VERSION } = env
     return merge ([
         {
             entry: {
-                main: 'src/index.js'
+                main: './src/index.js'
             },
             output: {
                 filename: PLATFORM === 'production'
