@@ -1,6 +1,6 @@
 module.exports = {
     presets: [['@babel/preset-env'], '@babel/preset-react'],
-    ignore: [/[/\\]core-js/, /@babel[/\\]runtime/],
+    // ignore: [/[/\\]core-js/, /@babel[/\\]runtime/],
     plugins: [
         '@babel/plugin-proposal-class-properties',
         '@babel/plugin-syntax-dynamic-import',
