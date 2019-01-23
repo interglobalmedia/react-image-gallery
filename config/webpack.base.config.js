@@ -72,7 +72,7 @@ module.exports = env => {
                 new CleanWebpackPlugin(['dist']),
                 new HtmlWebpackPlugin({
                     template: 'src/index.html',
-                    styles: 'scr/styles.css',
+                    styles: 'src/styles/styles.css',
                     inject: true
                 }),
                 new MiniCssExtractPlugin({
